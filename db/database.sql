@@ -34,6 +34,8 @@ CREATE TABLE chat_room_members (
   room_id INT NOT NULL,                        -- 채팅방 ID
   user_id INT NOT NULL,                        -- 멤버 유저 ID
   joined_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  hidden BOOLEAN DEFAULT FALSE,                -- 사용자에게 채팅방 숨김 여부
+  left_at TIMESTAMP NULL,                      -- 채팅방을 떠난 시간
   FOREIGN KEY (room_id) REFERENCES chat_rooms(id),
   FOREIGN KEY (user_id) REFERENCES users(id)
 );
