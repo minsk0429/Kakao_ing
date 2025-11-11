@@ -9,10 +9,12 @@ const messageRoutes = require('./routes/messages');
 
 const app = express();
 
-// CORS 설정: 프론트엔드 URL(3000포트) 및 인증정보 허용
+// CORS 설정: 프론트엔드 URL 및 인증정보 허용
 app.use(cors({
-  origin: 'http://localhost:3000', 
-  credentials: true
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'], 
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json());

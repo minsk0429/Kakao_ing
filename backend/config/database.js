@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'your_password',  // 실제 MySQL 비밀번호로 변경
+  password: '211711',
   database: 'kakaotalk_clone'
 });
 
